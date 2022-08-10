@@ -1,0 +1,221 @@
+@import '../base/variables';
+
+.cards-list {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(36, 350px);
+    justify-content: center;
+    gap: 20px;
+}
+
+.cards-list__item {
+    position: relative;
+    max-width: 250px;
+    max-height: 350px;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    perspective: 1000px;
+    transition: 1s ease-in;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.front-part {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid $silver;
+    border-radius: 20px;
+    padding: 10px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: $white;
+}
+
+.back-part {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.cards-list__item:hover {
+    transform: rotateY(-180deg);
+}
+
+@keyframes random {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+.cards-list__item:nth-child(2),
+.cards-list__item:nth-child(13),
+.cards-list__item:nth-child(21),
+.cards-list__item:nth-child(30) {
+    animation: random 2s alternate 2 3s;
+}
+
+.cards-list__item:nth-child(1),
+.cards-list__item:nth-child(11),
+.cards-list__item:nth-child(23),
+.cards-list__item:nth-child(34) {
+    animation: random 2s alternate 2 10s;
+}
+
+.cards-list__item:nth-child(3),
+.cards-list__item:nth-child(14),
+.cards-list__item:nth-child(26),
+.cards-list__item:nth-child(32) {
+    animation: random 2s alternate 2 17s;
+}
+
+.cards-list__item:nth-child(4),
+.cards-list__item:nth-child(10),
+.cards-list__item:nth-child(22),
+.cards-list__item:nth-child(35) {
+    animation: random 2s alternate 2 25s;
+}
+
+.cards-list__item:nth-child(6),
+.cards-list__item:nth-child(16),
+.cards-list__item:nth-child(25),
+.cards-list__item:nth-child(36) {
+    animation: random 2s alternate 2 30s;
+}
+
+.cards-list__item:nth-child(8),
+.cards-list__item:nth-child(17),
+.cards-list__item:nth-child(20),
+.cards-list__item:nth-child(31) {
+    animation: random 2s alternate 2 35s;
+}
+
+.cards-list__item:nth-child(5),
+.cards-list__item:nth-child(12),
+.cards-list__item:nth-child(29),
+.cards-list__item:nth-child(33) {
+    animation: random 2s alternate 2 40s;
+}
+
+.cards-list__item:nth-child(7),
+.cards-list__item:nth-child(18),
+.cards-list__item:nth-child(27),
+.cards-list__item:nth-child(15) {
+    animation: random 2s alternate 2 45s;
+}
+
+.cards-list__item:hover {
+    animation: none;
+}
+
+
+.front-part__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.front-part__midle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 5px;
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .midle-first, .midle-third {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .icon:nth-child(3),
+        .icon:nth-child(4) {
+        transform: rotate(180deg);
+        }
+    }
+
+    .midle-second {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .icon:nth-child(2) {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.front-part__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.front-part__right span,
+.front-part__right .icon {
+    transform: rotate(180deg);
+}
+
+
+.front-part__left .icon,
+.front-part__right .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.number-red {
+    color: $red;
+}
+
+.front-part__midle-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
+    padding: 20px 5px;
+
+    .icon-red, .icon-black, .icon-ace {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon-red {
+        stroke: $red;
+        fill: $red
+    }
+
+    .icon-black {
+        stroke: $black;
+        fill: $black;
+    }
+
+    .icon-red:nth-child(2), .icon-black:nth-child(2) {
+        margin-top: 50px;
+        transform: rotate(180deg);
+    }
+}
+
+
+

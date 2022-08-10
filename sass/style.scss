@@ -1,0 +1,8 @@
+@import 'base/reset';
+@import 'layout_000/general';
+@media only screen and (min-width: 768px) {
+    @import 'layout_768/general';
+}
+@media only screen and (min-width: 1200px) {
+    @import 'layout_1200/general';
+}
